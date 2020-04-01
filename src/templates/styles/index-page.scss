@@ -1,0 +1,137 @@
+@import "./globals.scss";
+@import "../../styles/variables.scss";
+
+.hero-wrapper {
+  display: flex;
+  height: calc(100vh - #{$magicNumber} * 2);
+  .hero-content {
+    width: 100vw;
+    height: 100%;
+    min-height: calc(80vh - #{$magicNumber} * 2);
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: $magicNumberFlex * 2 $magicNumberFlex $magicNumberFlex
+      $magicNumberFlex;
+
+    .title {
+      color: $c-white;
+      word-break: break-word;
+      margin-top: $magicNumber / 2;
+    }
+  }
+
+  @media screen and (min-width: $tablet-breakpoint) {
+    height: calc(100vh - #{$magicNumber} * 3.5);
+
+    .hero-content {
+      padding: $magicNumber * 2 $magicNumber $magicNumber $magicNumber;
+      .title {
+        width: 100%;
+      }
+    }
+  }
+  @media screen and (min-width: $large-desktop-breakpoint) {
+    .hero-content {
+      .title {
+        max-width: 60vw;
+      }
+    }
+  }
+}
+.section--highlights {
+  background-color: $c-creme;
+  padding: $magicNumber;
+  padding-top: $magicNumber * 1.5;
+  .page--heading {
+    margin-bottom: $magicNumber;
+    margin-top: $magicNumber;
+  }
+  @media screen and (max-width: $tablet-breakpoint) {
+    padding: 5vw;
+    padding-top: $magicNumber;
+  }
+}
+.section--about {
+  background-color: $c-brown;
+  padding: $magicNumber;
+  position: relative;
+
+  &:after {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    height: 50%;
+    width: 100%;
+    background-color: $c-creme;
+    z-index: 0;
+  }
+  .container--about {
+    padding: $magicNumber;
+    border-radius: 5px;
+    background-color: $c-white;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    z-index: 1;
+
+    .col--logo {
+      width: 100%;
+    }
+    .col--text {
+      width: 100%;
+    }
+    @media screen and (min-width: $tablet-breakpoint) {
+      flex-direction: row;
+      padding: $magicNumber * 2;
+      .col--logo {
+        width: 40%;
+      }
+      .col--text {
+        width: 60%;
+      }
+    }
+  }
+  @media screen and (max-width: $tablet-breakpoint) {
+    padding: $magicNumberFlex / 2;
+    .container--about {
+      padding: $magicNumberFlex;
+      .col--logo {
+        max-width: $magicNumberFlex * 5;
+        margin: 0 auto;
+      }
+    }
+  }
+}
+
+.section--news {
+  padding: $magicNumber;
+  background-color: $c-brown;
+  .container--news {
+    max-width: $maxWidth;
+    margin: 0 auto;
+    margin-bottom: $magicNumber * 2;
+    .news-list-item {
+      color: $c-white;
+      border-top-color: $c-white;
+      .btn-arrow {
+        color: $c-white;
+      }
+    }
+  }
+  h2 {
+    color: $c-white;
+    margin-bottom: $magicNumber * 2;
+    font-weight: 300;
+  }
+  @media screen and (max-width: $tablet-breakpoint) {
+    padding: $magicNumberFlex;
+    margin-top: -1px;
+    h2 {
+      margin-bottom: $magicNumber;
+    }
+  }
+}

@@ -1,0 +1,119 @@
+@import "../../styles/variables.scss";
+
+.search-box {
+  background-color: $c-white;
+  padding: $magicNumberFlex / 2;
+  border-radius: $s-br_small;
+  h4 {
+    margin: $magicNumber / 4 0 $magicNumber / 2 0;
+  }
+
+  &.home-page {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    @media screen and (min-width: $tablet-breakpoint) {
+      max-width: $magicNumber * 8;
+      min-height: $magicNumber * 6;
+      position: absolute;
+      right: $magicNumber;
+      bottom: 0;
+      transform: translateY($magicNumber * 2);
+      padding: $magicNumber / 2;
+    }
+  }
+  .advanced-search {
+    @media screen and (max-width: $tablet-breakpoint) {
+      margin-top: $magicNumberFlex;
+    }
+    a {
+      text-decoration: none;
+      color: $c-grey_medium;
+      &:hover {
+        color: $c-red;
+      }
+    }
+  }
+}
+
+// Algolia Import
+
+.react-autosuggest__container {
+  position: relative;
+  margin-bottom: 1rem;
+}
+
+.react-autosuggest__input {
+  width: 100%;
+  padding: $magicNumber / 4;
+  border: 2px solid $c-grey_medium;
+  border-radius: 5px;
+  width: 100%;
+  height: $magicNumber;
+  
+  &::placeholder {
+    // padding: $magicNumber / 4;
+  }
+  &:focus {
+    // outline: 1px solid black;
+    border-color: $c-black;
+  }
+}
+
+.react-autosuggest__input--focused {
+  outline: none;
+}
+
+.react-autosuggest__input--open {
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+}
+
+.react-autosuggest__suggestions-container {
+  display: none;
+}
+
+.react-autosuggest__suggestions-container--open {
+  position: absolute;
+  display: block;
+  box-sizing: border-box;
+  top: $magicNumber - 1px;
+  width: 100%;
+  border: 1px solid $c-black;
+  background-color: #fff;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+  z-index: 2;
+  overflow-y: scroll;
+  max-height: 50vh;
+}
+
+.react-autosuggest__suggestions-list {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+}
+
+.react-autosuggest__suggestion {
+  cursor: pointer;
+  padding: $magicNumber / 4;
+  margin: 0;
+  a {
+    color: $c-grey_medium;
+    text-decoration: none;
+  }
+  &:before {
+    display: none;
+  }
+  &:hover {
+    background-color: rgba($c-black, 0.05);
+    a {
+      color: $c-red;
+    }
+  }
+}
+
+.react-autosuggest__suggestion--highlighted {
+  background-color: $c-grey_light;
+}

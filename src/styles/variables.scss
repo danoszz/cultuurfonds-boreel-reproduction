@@ -1,0 +1,57 @@
+// Variables
+
+$magicNumber: 60px;
+$magicNumberFlex: 8vw;
+$c-white: #fff;
+$c-black: #000;
+$c-red: #fc3333;
+$c-creme: #f4ede9;
+$c-brown: #252220;
+$c-grey_medium: #8e8e8e;
+$c-grey_light: #c2c2c2;
+
+$s-br_small: 5px;
+
+$size--grid__tile: $magicNumber;
+$size--width-total__grid--objects: $size--grid__tile * 10; // formula for width of initial grid objects + gap width = 60rem
+$aspect-ratio--object: (3 / 4);
+$maxWidth: 1440px;
+
+// Breakpoints
+
+$small-phone-breakpoint: 22em; // if base-pixel = 16 -> $column--width * 5 = 350px ~~ 22em
+$phablet-breakpoint: 35em; // if base-pixel = 16 -> $column--width * 8 = 560px ~~ 35em
+$tablet-breakpoint: 48em; // idc
+$small-desktop-breakpoint: 56em; // idc
+$desktop-breakpoint: 64em; // ~
+$large-desktop-breakpoint: 80em; // aka compensate screen
+
+// Animations
+$transition--smooth: cubic-bezier(0.455, 0.03, 0.515, 0.955);
+
+// Globals
+
+html {
+  box-sizing: border-box;
+  border-collapse: collapse;
+  line-height: 1;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: $c-white;
+  font-display: swap;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+}
+
+* {
+  border-collapse: inherit;
+}
+
+*,
+:after,
+:before {
+  box-sizing: inherit;
+}
+
+a {
+  color: $c-red;
+}

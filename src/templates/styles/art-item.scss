@@ -1,0 +1,153 @@
+@import "./globals.scss";
+@import "../../styles/variables.scss";
+
+.page--wrapper.art-item {
+  background-color: $c-creme;
+}
+
+.art-item--page {
+  max-width: $maxWidth;
+  margin: $magicNumber auto 0 auto;
+  background-color: $c-creme;
+  padding: $magicNumber;
+  display: grid;
+  grid-column-gap: $magicNumber;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-rows: auto;
+  grid-template-areas:
+    "subnav subnav subnav subnav"
+    "title title title title"
+    "info info image image"
+    "info info image image";
+
+  @media screen and (max-width: $small-desktop-breakpoint) {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+    grid-template-areas:
+      "subnav"
+      "title"
+      "image"
+      "info";
+  }
+  @media screen and (max-width: $phablet-breakpoint) {
+    padding: $magicNumber / 2;
+  }
+
+  .sub-navigation {
+    width: 100%;
+    grid-area: subnav;
+    margin-top: $magicNumber;
+  }
+
+  .page--heading {
+    grid-area: title;
+    margin-right: 50%;
+    @media screen and (max-width: $large-desktop-breakpoint) {
+      margin-right: 0;
+    }
+  }
+  .item--info {
+    grid-area: info;
+    .person--dates {
+      margin: $magicNumber 0;
+      padding: $magicNumber / 8 $magicNumber / 6;
+      background-color: rgba($c-black, 0.05);
+      display: inline-block;
+      border-radius: 5px;
+      font-size: 18px;
+
+      .date--dash {
+        color: $c-red;
+      }
+      @media screen and (max-width: $small-desktop-breakpoint) {
+        margin: $magicNumber / 4 0;
+        width: 100%;
+        text-align: center;
+        margin-bottom: $magicNumber / 2;
+      }
+    }
+  }
+  .item--image {
+    grid-area: image;
+    padding-left: $magicNumber;
+    .featured-thumbnail {
+      border-radius: 5px;
+    }
+    .art-item--preview {
+      margin-top: $magicNumber;
+      position: sticky;
+      top: $magicNumber;
+      &:after {
+        background: transparent;
+      }
+      &:hover {
+        transform: none;
+      }
+    }
+    @media screen and (max-width: $small-desktop-breakpoint) {
+      padding-left: 0;
+      .art-item--preview {
+        margin-top: 0;
+        position: relative;
+        top: initial;
+      }
+    }
+  }
+}
+.section--related {
+  padding: $magicNumber;
+  background-color: $c-brown;
+
+  h2 {
+    color: $c-white;
+    margin-top: $magicNumber * 1.5;
+    margin-bottom: $magicNumber;
+    font-weight: 300;
+  }
+  .container--related {
+    max-width: $maxWidth;
+    margin: 0 auto;
+  }
+  @media screen and (max-width: $phablet-breakpoint) {
+    padding: $magicNumber / 2;
+  }
+}
+.info--metadata {
+  margin-top: $magicNumber;
+}
+
+.btn-back {
+  margin: 0;
+  padding: 0;
+  color: black;
+  text-decoration: none;
+  display: inline-flex;
+  justify-self: center;
+  align-items: center;
+  .icon {
+    display: inline-flex;
+    justify-self: center;
+    align-items: center;
+    margin-right: $magicNumber / 4;
+    img {
+      margin: 0;
+      padding: 0;
+    }
+    &.flipped {
+      img {
+        transform: rotate(180deg);
+      }
+    }
+  }
+  .text {
+    font-weight: 400;
+  }
+  @media screen and (max-width: $phablet-breakpoint) {
+    .icon img {
+      width: $magicNumber / 3;
+    }
+    .icon .text {
+      font-size: 12px;
+    }
+  }
+}

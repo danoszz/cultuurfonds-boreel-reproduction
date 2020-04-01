@@ -1,0 +1,40 @@
+@import "../../styles/variables.scss";
+
+.btn-back,
+.btn-arrow {
+  margin: 0;
+  padding: 0;
+  color: black;
+  text-decoration: none;
+  display: inline-flex;
+  justify-self: center;
+  align-items: center;
+  .icon {
+    display: inline-flex;
+    justify-self: center;
+    align-items: center;
+    margin: 0 $magicNumber / 4;
+
+    img {
+      margin: 0;
+      padding: 0;
+      width: $magicNumber / 2;
+    }
+    &.flipped {
+      img {
+        transform: rotate(180deg);
+      }
+    }
+  }
+  .text {
+    font-weight: 400;
+  }
+  @media screen and (max-width: $phablet-breakpoint) {
+    .icon img {
+      width: $magicNumber / 3;
+    }
+    .icon .text {
+      font-size: 12px;
+    }
+  }
+}

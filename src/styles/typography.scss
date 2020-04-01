@@ -1,0 +1,107 @@
+// Typography
+
+h1,
+h2,
+h3 {
+  font-family: "Ibarra Real Nova";
+}
+
+h4,
+h5,
+h6 {
+  font-family: "Work Sans";
+}
+
+.h4__large {
+  font-size: 24px;
+  font-weight: 400;
+  @media screen and (min-width: $tablet-breakpoint) {
+    font-size: 36px;
+  }
+}
+
+.h1__large {
+  font-size: calc(40px + 1vw);
+  line-height: 1;
+  color: inherit;
+  font-weight: 100;
+  @media screen and (min-width: $tablet-breakpoint) {
+    font-size: calc(100px + 1vw);
+  }
+}
+
+.page--heading {
+  font-size: calc(28px + 2vw);
+  font-family: "Work Sans";
+  font-weight: 400;
+  @media screen and (min-width: $phablet-breakpoint) {
+    font-size: 46px;
+  }
+  @media screen and (min-width: $tablet-breakpoint) {
+    font-size: 60px;
+  }
+  @media screen and (min-width: $small-desktop-breakpoint) {
+    font-size: 80px;
+  }
+}
+
+p,
+ol li,
+ul li {
+  line-height: 32px;
+  font-size: 22px;
+  font-weight: 300;
+  @media screen and (max-width: $tablet-breakpoint) {
+    line-height: 28px;
+    font-size: 19px;
+  }
+}
+
+h2 {
+  font-size: 60px;
+  @media screen and (max-width: $tablet-breakpoint) {
+    font-size: 42px;
+  }
+}
+h3 {
+  font-size: 32px;
+  @media screen and (max-width: $tablet-breakpoint) {
+    font-size: 28px;
+    margin-bottom: 14px;
+  }
+}
+h4 {
+  font-size: 22px;
+  line-height: 1.25;
+  font-weight: 400;
+  @media screen and (min-width: $tablet-breakpoint) {
+    font-size: 32px;
+  }
+}
+
+ul {
+  list-style: none;
+  li:before {
+    content: "\2022";
+    color: #fc3333;
+    font-weight: bold;
+    display: inline-block;
+    width: 1.5em;
+    margin-left: -1em;
+  }
+}
+
+ol {
+  list-style: none;
+  counter-reset: li;
+  li {
+    counter-increment: li;
+  }
+  li:before {
+    content: counter(li);
+    color: red;
+    display: inline-block;
+    width: 1.5em;
+    margin-left: -1em;
+  }
+}

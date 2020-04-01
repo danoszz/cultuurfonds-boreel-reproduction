@@ -1,0 +1,39 @@
+@import "../styles/variables.scss";
+
+.form-field--wrapper {
+  .form-field,
+  .form-button {
+    width: 100%;
+    height: $magicNumber;
+    padding: $magicNumber / 4;
+    border-radius: $s-br_small;
+    border: 2px solid $c-black;
+    margin-bottom: $magicNumber / 4;
+    color: $c-grey_medium;
+    background-color: $c-white;
+  }
+  .form-field {
+    &:active,
+    &:focus {
+      // border-color: $c-red;
+      color: $c-black;
+      outline: none;
+    }
+    &.dropdown {
+      // padding-left: $magicNumber / 2;
+    }
+  }
+
+  .form-button {
+    background-color: $c-black;
+    color: $c-white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    &:hover {
+      cursor: pointer;
+      border: $c-red;
+      background-color: $c-red;
+    }
+  }
+}

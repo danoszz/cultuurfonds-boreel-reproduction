@@ -1,0 +1,39 @@
+.grid--container {
+  display: grid;
+  background-color: $white;
+  grid-template-columns: (2 * $size--grid__tile) 1fr;
+  grid-template-rows: (2 * $size--grid__tile) 100vh;
+  grid-template-areas: "header header" "main main" "main main" "footer footer";
+}
+@media screen and (min-width: $tablet-breakpoint) {
+  .grid--container {
+    grid-template-columns: (4 * $size--grid__tile) 1fr;
+    grid-template-rows: (4 * $size--grid__tile) 100vh;
+    grid-template-areas: "header main" "sidebar main" "sidebar main" "sidebar footer";
+  }
+}
+
+.page-default--content__information {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 2fr;
+  grid-column-gap: $size--grid__tile;
+  grid-template-areas: "page-title" "page-intro"; // note to self: make use of 'grid' instead of all clutter
+  margin-bottom: $size--grid__tile;
+
+  .page--title {
+    grid-area: "page-title";
+  }
+
+  .page--introduction {
+    grid-area: "page-intro";
+    text-align: justify;
+    hyphens: auto;
+  }
+  @media screen and (min-width: 52rem) {
+
+        grid-template-columns: 1fr 1fr;
+        grid-template-areas: "page-title" "page-intro"; // note to self: make use of 'grid' instead of all clutter
+
+    }
+}

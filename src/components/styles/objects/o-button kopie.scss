@@ -1,0 +1,68 @@
+.o-button {
+  text-decoration: none;
+  border: 1px solid $black;
+  border-radius: $size--grid__tile;
+  margin: 0;
+  color: $black;
+  background-color: transparent;
+  height: $size--grid__tile;
+  position: relative;
+  display: flex;
+  span {
+    padding-left: $size--grid__tile / 6;
+  }
+  &.o-button--medium {
+    padding: ($size--grid__tile / 6) ($size--grid__tile / 2);
+    // Improvements: make @mixin
+    &.o-button--medium__outline-color {
+      color: $light-red-one;
+      border: 1px solid $light-red-one;
+      span svg {
+        color: $light-red-one;
+      }
+      &:hover {
+        color: $white;
+        background-color: $light-red-one;
+        span svg {
+          color: $white;
+        }
+      }
+    }
+    &.o-button--medium__outline-light {
+      color: $white;
+      border: 1px solid $white;
+      span svg {
+        color: $white;
+      }
+      &:hover {
+        color: $light-red-one;
+        background-color: $white;
+        span svg {
+          color: $light-red-one;
+        }
+      }
+    }
+  }
+  &.o-button--icon {
+    height: $size--grid__tile;
+    width: $size--grid__tile;
+    span {
+      height: $size--grid__tile;
+      width: $size--grid__tile;
+    }
+  }
+
+  span svg {
+    color: $black;
+    height: $size--grid__tile / 4;
+  }
+
+  &:hover {
+    color: $white;
+    background-color: $black;
+
+    span svg {
+      color: $white;
+    }
+  }
+}

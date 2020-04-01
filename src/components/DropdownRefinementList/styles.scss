@@ -1,0 +1,165 @@
+@import "../../styles/variables.scss";
+
+.ais-DropdownRefinementList-container {
+  padding: $magicNumber / 3;
+  margin-right: $magicNumber / 4;
+  border: 2px solid $c-black;
+  border-radius: 5px;
+  z-index: 998;
+  cursor: pointer;
+  position: relative;
+  height: 100%;
+  width: 100%;
+  max-height: $magicNumber * 1.5;
+
+  &:last-child {
+    margin-right: 0;
+  }
+  &:hover,
+  &.is-active {
+    background-color: $c-black;
+    color: $c-white;
+  }
+}
+.ais-DropdownRefinementList-title {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0;
+  padding: 0;
+}
+
+.ais-DropdownRefinementList-List {
+  padding: $magicNumber / 4;
+  background: #fff;
+  position: absolute;
+  margin-top: calc((#{$magicNumber} / 3) - 2px);
+  margin-left: calc((-#{$magicNumber} / 3) - 2px);
+  border: 2px solid $c-black;
+  border-radius: 0 0 5px 5px;
+  width: calc(100% + 4px);
+  overflow-y: scroll;
+  max-height: 50vh;
+}
+.ais-DropdownRefinementList-container:hover .ais-DropdownRefinementList-List {
+  display: inline-block;
+}
+.ais-DropdownRefinementList-title span {
+  color: gray;
+}
+.ais-DropdownRefinementList-item-label {
+  display: flex;
+  cursor: pointer;
+  align-items: center;
+  white-space: pre-wrap;
+  color: $c-black;
+}
+.ais-DropdownRefinementList-item-label span {
+  padding-left: $magicNumber / 6;
+}
+.ais-DropdownRefinementList-item-label-desc {
+  margin-left: 8px;
+}
+.ais-DropdownRefinementList-caret-down {
+  border: solid #999;
+  border-width: 0 2px 2px 0;
+  display: inline-block;
+  padding: 3px;
+  margin-bottom: 3px;
+  margin-left: 4px;
+  transform: rotate(45deg);
+}
+.ais-DropdownRefinementList-active-facets {
+  background: $c-red;
+  width: $magicNumber / 2;
+  height: $magicNumber / 2;
+  color: $c-white;
+  border-radius: 50%;
+  text-align: center;
+  display: inline-block;
+  margin-bottom: 0;
+  font-size: 16px;
+  font-weight: 400;
+  margin: 0;
+  padding: 0;
+  line-height: $magicNumber / 2;
+  position: absolute;
+  top: -$magicNumber / 4;
+  right: -$magicNumber / 4;
+}
+.ais-DropdownRefinementList-item-count {
+  color: #999;
+  font-size: 0.8em;
+}
+span.ais-DropdownRefinementList-item-count {
+  padding: 0;
+}
+.ais-ListItem {
+  margin-bottom: $magicNumber / 3;
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+// .checkbox input[type="checkbox"] {
+//   opacity: 0;
+// }
+
+// .checkbox label {
+//   position: relative;
+//   display: inline-block;
+
+//   /*16px width of fake checkbox + 6px distance between fake checkbox and text*/
+//   padding-left: 22px;
+// }
+
+// .checkbox label::before,
+// .checkbox label::after {
+//   position: absolute;
+//   content: "";
+
+//   /*Needed for the line-height to take effect*/
+//   display: inline-block;
+// }
+
+// /*Outer box of the fake checkbox*/
+// .checkbox label::before {
+//   height: 16px;
+//   width: 16px;
+
+//   border: 1px solid;
+//   left: 0px;
+
+//   /*(24px line-height - 16px height of fake checkbox) / 2 - 1px for the border
+//    *to vertically center it.
+//    */
+//   top: 3px;
+// }
+
+// /*Checkmark of the fake checkbox*/
+// .checkbox label::after {
+//   height: 5px;
+//   width: 9px;
+//   border-left: 2px solid;
+//   border-bottom: 2px solid;
+
+//   transform: rotate(-45deg);
+
+//   left: 4px;
+//   top: 7px;
+// }
+
+// /*Hide the checkmark by default*/
+// .checkbox input[type="checkbox"] + label::after {
+//   content: none;
+// }
+
+// /*Unhide on the checked state*/
+// .checkbox input[type="checkbox"]:checked + label::after {
+//   content: "";
+// }
+
+// /*Adding focus styles on the outer-box of the fake checkbox*/
+// .checkbox input[type="checkbox"]:focus + label::before {
+//   outline: rgb(59, 153, 252) auto 5px;
+// }

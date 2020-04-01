@@ -1,0 +1,16 @@
+@import "../../templates/styles/globals.scss";
+@import "../../styles/variables.scss";
+
+.page--news {
+  background-color: $c-creme;
+  min-height: 100vh;
+  position: relative;
+  padding: $magicNumber;
+  display: flex;
+  flex-direction: column;
+  padding: $magicNumber * 2 $magicNumber $magicNumber $magicNumber;
+  @media screen and (max-width: $phablet-breakpoint) {
+    padding: $magicNumber * 2 $magicNumberFlex / 2 $magicNumberFlex / 2
+      $magicNumberFlex / 2;
+  }
+}

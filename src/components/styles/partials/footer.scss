@@ -1,0 +1,27 @@
+.footer {
+  grid-area: footer;
+  background-color: $light-gray-one;
+	border: 2px solid rgba(0,0,0,0.05);
+	box-shadow: 0 0 10px 0 rgba(0,0,0,0.15);
+  padding: $size--grid__tile;
+  z-index: 5;
+  position: relative;
+  &:after {
+    content: '';
+    position: absolute;
+    top: -10px;
+    left: 0;
+    background: $white;
+    height: 10px;
+    width: 100%;
+  }
+  p {
+    margin-bottom: 0;
+    font-size: 0.9rem;
+    opacity: 0.8;
+    transition: opacity 400ms ease;
+    &:hover {
+      opacity: 1;
+    }
+  }
+}

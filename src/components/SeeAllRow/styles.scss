@@ -1,0 +1,46 @@
+@import "../../styles/variables.scss";
+
+.see-all--wrapper {
+  display: flex;
+  padding: $magicNumber / 2;
+  margin-top: $magicNumber / 2;
+  a {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    text-decoration: none;
+    opacity: 0.5;
+    transition: all 165ms $transition--smooth;
+    &:hover {
+      opacity: 1;
+    }
+  }
+  .line {
+    width: 100%;
+    height: 1.5px;
+    background-color: rgba($c-white, 0.9);
+    margin-right: $magicNumber / 2;
+  }
+  .text {
+    white-space: nowrap;
+    color: $c-white;
+  }
+  .icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: $magicNumber / 4;
+    img {
+      margin: 0;
+    }
+  }
+  &.is-dark {
+    .line {
+      background-color: rgba($c-brown, 0.9);
+    }
+    .text {
+      white-space: nowrap;
+      color: $c-brown;
+    }
+  }
+}

@@ -1,0 +1,8 @@
+// Sizes
+// -----
+$column--width: 70px;
+$column--width__flex: 100vw / 12;
+
+$size--grid__tile: 3rem;
+$size--width-total__grid--objects: $size--grid__tile * 10 ; // formula for width of initial grid objects + gap width = 60rem
+$aspect-ratio--object: (3 / 4);

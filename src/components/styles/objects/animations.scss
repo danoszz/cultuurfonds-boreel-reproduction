@@ -1,0 +1,82 @@
+.c-gallery--grid {
+	// * {
+	// 	opacity: 0;
+	// 	animation: $fadeinBottom;
+	// }
+	// @for $i from 1 to 20 {
+	// 	.c-gallery--grid--object:nth-child(#{$i}) {
+	// 		animation-delay: $delay__main + ($i * $delay__1);
+	// 	}
+	// }
+
+}
+
+.c-news--grid {
+	.c-news--grid--object {
+		opacity: 0;
+		animation: $fadeinBottom;
+	}
+	@for $i from 1 to 20 {
+		.c-news--grid--object:nth-child(#{$i}) {
+			animation-delay: $i * $delay__1;
+		}
+	}
+
+}
+
+
+
+@keyframes fadeInBottom {
+  0% {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+  75% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIntop {
+  0% {
+    opacity: 0;
+    transform: translateY(-50px);
+  }
+  75% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+	100% {
+		opacity: 1;
+	}
+}
+@keyframes scrollIndicator {
+	0% {
+		transform-origin: center top;
+		transform: scale(1, 1);
+	}
+
+	25% {
+		transform: scale(1, 0);
+		transform-origin: center top;
+	}
+
+	50% {
+		transform: scale(1, 0);
+		transform-origin: center bottom;
+	}
+
+	100% {
+		transform-origin: center bottom;
+		transform: scale(1, 1);
+	}
+}

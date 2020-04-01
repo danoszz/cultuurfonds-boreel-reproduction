@@ -1,0 +1,18 @@
+.page-post--content__information {
+  .page--date {
+    // position: absolute;
+    // right: 0;
+    display: inline-block;
+    background-color: $light-gray-one;
+    padding: ($size--grid__tile / 6) ($size--grid__tile / 2);
+    border-radius: 2px;
+  }
+  .page--title {
+    margin-bottom: $size--grid__tile;
+    max-width: 80%;
+  }
+  .page--text {
+    margin-left: $size--grid__tile / 2;
+    max-width: $size--grid__tile * 11;
+  }
+}

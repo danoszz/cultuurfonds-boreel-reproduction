@@ -1,0 +1,23 @@
+// Apply the baseline grid as background
+
+.grid {
+  position: absolute;
+  pointer-events: none;
+  width: 100%;
+  height: 400vh;
+  z-index: 9999;
+}
+
+
+.grid__vertical {
+  background-position: left top;
+  background-image: linear-gradient(90deg, transparent 50%, rgba($blue, 0.035) 50%);
+  background-size: ($size--grid__tile * 2) 100%;
+}
+
+
+// dope dropshadow thingy
+// ----------------------
+//background-image: linear-gradient(to right, transparent 1px, #444444 20px ), linear-gradient(90deg, transparent 940px, #222222 10px);
+//background-size: $size--grid__tile, 100%;
+//background-position: $size--grid__tile, $size--grid__tile;

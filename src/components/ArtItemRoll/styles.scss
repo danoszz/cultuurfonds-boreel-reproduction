@@ -1,0 +1,19 @@
+@import "../../styles/variables.scss";
+
+$offsetItem: $magicNumber;
+
+.art-item--roll {
+  display: grid;
+  width: 100%;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: $magicNumber / 2;
+
+  margin-top: $magicNumber / 2;
+
+  @media screen and (max-width: $tablet-breakpoint) {
+    grid-template-columns: 1fr 1fr;
+  }
+  @media screen and (max-width: $phablet-breakpoint) {
+    grid-template-columns: 1fr;
+  }
+}

@@ -1,0 +1,12 @@
+// Typography
+// ----------
+$base-font-size: 100; // Gets used as %
+$base-font-size-desktop: 104;
+$line-height: 1.4;
+$line-height-desktop: 1.5;
+$base: ($base-font-size / 100); // We'll need this for some calculations
+
+$ratio: 1.5; // Perfect Fifth // Modular scale
+
+$font--sans: 'Work Sans', 'Helvetica', sans-serif;
+$font--serif: 'Libre Baskerville', 'Georgia', serif;

@@ -1,0 +1,30 @@
+.toggle--menu {
+	margin: $size--grid__tile / 2;
+	width: $size--grid__tile;
+	height: $size--grid__tile;
+	color: $white;
+	z-index: 100;
+	display: block;
+	text-align: center;
+	padding: 10px;
+	// background-image: url('../assets/images/icon--menu__open.svg');
+	background-size: 50% 50%;
+	background-position: center;
+	background-repeat: no-repeat;
+	transition: all 300ms ease-in-out;
+	right: 0;
+	p {
+		opacity: 0;
+		font-size: 0;
+	}
+
+	&.isActive {
+		background-color: $white;
+		border-radius: 50%;
+		position: fixed;
+		// background-image: url('../assets/images/icon--menu__close.svg');
+	}
+	@media screen and (min-width: $tablet-breakpoint) {
+		display: none;
+	}
+}

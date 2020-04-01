@@ -1,0 +1,29 @@
+html {
+	box-sizing: border-box;
+	border-collapse: collapse;
+	line-height: 1;
+	-moz-osx-font-smoothing: grayscale;
+	background-color: $white;
+}
+
+* {
+	border-collapse: inherit;
+}
+
+*,
+:after,
+:before {
+	box-sizing: inherit;
+}
+
+
+body {
+	min-height: 100vh;
+	// display: flex;
+	// flex-direction: column-reverse;
+	//overflow-x: hidden;
+	@media screen and (min-width: $phablet-breakpoint) and (min-aspect-ratio: 1/1) and (min-height: $column--width * 8) {
+	//	display: initial;
+		//overflow: hidden;
+	}
+}

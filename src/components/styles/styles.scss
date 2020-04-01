@@ -1,0 +1,46 @@
+// Variables
+// ---------
+@import "variables/variables";
+
+// Libraries and mixins
+// --------------------
+@import "lib/normalize";
+@import "mixins/shadows";
+
+// Base and custom resets
+// ----------------------
+@import "base/base";
+
+// Layouts
+// -------
+@import "layouts/pages/home";
+@import "layouts/pages/news-post";
+@import "layouts/pages/gallery-post";
+
+@import "layouts/default";
+
+// Partials
+// ----------
+@import "partials/header";
+@import "partials/main";
+@import "partials/sidebar";
+@import "partials/footer";
+
+// Objects
+// -------
+@import "objects/links";
+@import "objects/forms";
+@import "objects/animations";
+@import "objects/grid";
+@import "objects/o-button";
+
+// Components
+// ----------
+@import "components/togglemenu";
+@import "components/c-gallery--search";
+// @import "components/c-gallery--grid";
+@import "components/c-news--grid";
+
+// 2020
+@import "../../styles/typography.scss";
+@import "../../styles/forms.scss";

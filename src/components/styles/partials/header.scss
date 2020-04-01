@@ -1,0 +1,55 @@
+.header {
+  grid-area: header;
+  background-color: $light-gray-one;
+  display: flex;
+  flex-direction: row;
+  align-content: center;
+  justify-content: space-between;
+
+  .logo-boreel {
+    width: $size--grid__tile * 2;
+    height: $size--grid__tile * 2;
+    background-color: $light-gray-one;
+    align-self: center;
+    justify-self: start;
+
+    a {
+      text-decoration: none;
+      color: $black;
+      display: block;
+      margin: 0;
+      padding: $size--grid__tile / 2;
+
+      img {
+        width: 100%;
+        height: auto;
+      }
+
+      span {
+        display: none;
+        visibility: hidden;
+        // font-family: $font--serif;
+        text-decoration: none !important;
+      }
+    }
+  }
+}
+@media screen and (min-width: $tablet-breakpoint) {
+  .header {
+    position: initial;
+    background-color: $white;
+    justify-content: center;
+
+    .logo-boreel {
+      justify-self: center;
+      background-color: $white;
+
+      a {
+        position: relative;
+        transform: translateY(-50%);
+        top: 50%;
+        padding: 0;
+      }
+    }
+  }
+}

@@ -1,0 +1,178 @@
+$light-gray-one: #F9F9F9;
+$dark-red-one: #870C0C;
+$light-red-one: #FC3333;
+
+$control-color__dark: $black;
+$control-color__light: $white;
+$control-color__spot: $light-red-one;
+
+.control-group {
+  display: inline-block;
+  padding: $size--grid__tile / 2;
+}
+
+.control {
+  display: block;
+  position: relative;
+  padding-left: 30px;
+  margin-bottom: 15px;
+  cursor: pointer; // Encourage clicking on the label
+  -ms-touch-action: manipulation;
+  touch-action: manipulation;
+  user-select: none;
+  input {
+    position: absolute;
+    z-index: -1;
+    opacity: 0;
+    width: 100%;
+    left: 0;
+    top: 0;
+    height: 100%;
+  }
+}
+
+.control__indicator {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: $size--grid__tile / 3;
+  width: $size--grid__tile / 3;
+  border: 1px solid $control-color__dark;
+  border-radius: 2px;
+  background: $control-color__light;
+}
+
+.control--radio .control__indicator {
+  border-radius: 50%;
+}
+
+.control {
+  &:hover input ~ .control__indicator {
+    background: rgba($control-color__dark, 0.2); // on hover control styling
+  }
+  input {
+    &:focus ~ .control__indicator {
+      box-shadow: 0 0 0 2px $control-color__spot; // control checked & focus styling
+
+    //  background: rgba($control-color__dark, 0.4); // on focus control styling
+    }
+    &:checked ~ .control__indicator {
+      background: $control-color__dark; // control checked styling
+    }
+    &:checked + span {
+      text-decoration: underline; // control checked + text styling
+      text-decoration-skip-ink: atuo;
+    }
+  }
+  &:hover input:not([disabled]):checked ~ .control__indicator {
+   // if control disabled checked & hover styling
+
+  }
+  input {
+    &:checked:focus ~ .control__indicator {
+      // control checked & focus styling
+
+    }
+    &:disabled ~ .control__indicator {
+      // control disabled
+
+      background: $control-color__dark;
+      opacity: 0.6;
+      pointer-events: none;
+    }
+  }
+}
+
+// Only usable if checkarrow is needed
+///
+// .control__indicator:after {
+//   content: '';
+//   position: absolute;
+//   display: none;
+// }
+//
+// .control input:checked ~ .control__indicator:after {
+//   display: block;
+// }
+//
+// .control--checkbox {
+//   .control__indicator:after {
+//     left: 8px;
+//     top: 4px;
+//     width: 3px;
+//     height: 8px;
+//     border: solid $white;
+//     border-width: 0 2px 2px 0;
+//     transform: rotate(45deg);
+//   }
+//   input:disabled ~ .control__indicator:after {
+//     border-color: $control-color__dark;
+//   }
+// }
+
+.control--radio {
+  .control__indicator:after {
+    left: 7px;
+    top: 7px;
+    height: 6px;
+    width: 6px;
+    border-radius: 50%;
+    background: #fff;
+  }
+  input:disabled ~ .control__indicator:after {
+    background: $control-color__dark;
+  }
+}
+
+.select {
+  position: relative;
+  display: inline-block;
+  margin-bottom: 15px;
+  width: 100%;
+  select {
+    display: inline-block;
+    width: 100%;
+    cursor: pointer;
+    padding: 10px 15px;
+    outline: 0;
+    border: 0;
+    border-radius: 0;
+    background: $control-color__dark;
+    color: $control-color__light;
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    &::-ms-expand {
+      display: none;
+    }
+    &:hover, &:focus {
+      color: #000;
+      background: #ccc;
+    }
+    &:disabled {
+      opacity: 0.5;
+      pointer-events: none;
+    }
+  }
+}
+
+.select__arrow {
+  position: absolute;
+  top: 16px;
+  right: 15px;
+  width: 0;
+  height: 0;
+  pointer-events: none;
+  border-style: solid;
+  border-width: 8px 5px 0 5px;
+  border-color: #7b7b7b transparent transparent transparent;
+}
+
+.select select {
+  &:hover ~ .select__arrow, &:focus ~ .select__arrow {
+    border-top-color: #000;
+  }
+  &:disabled ~ .select__arrow {
+    border-top-color: #ccc;
+  }
+}

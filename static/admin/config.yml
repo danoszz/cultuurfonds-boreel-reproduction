@@ -1,0 +1,242 @@
+backend:
+  name: git-gateway
+  repo: danoszz/cultuurfonds-boreel-gatsby
+  branch: production
+  site_domain: https://cultuurfondsboreel.nl/
+  base_url: https://api.netlify.com
+  logo_url: https://cultuurfondsboreel.nl/img/boreel_wapen_1868_static.png
+
+media_folder: static/img
+public_folder: /img
+publish_mode: editorial_workflow
+
+# Kunst items
+
+collections:
+  - name: "col--art-items"
+    label: "Kunstobjecten"
+    folder: "src/pages/kunstcollectie"
+    create: true
+    slug: "{{title}}"
+    summary: "{{itemMetadata.objectNumber}} — {{title}}"
+    editor:
+      preview: false
+    fields:
+      - {
+          label: "Template Key",
+          name: "templateKey",
+          widget: "hidden",
+          default: "art-item",
+        }
+      - { label: "Titel", name: "title", widget: "string" }
+      - {
+          label: "Geportretteerde personen",
+          name: "portrayedPersons",
+          widget: "relation",
+          collection: "col--portrayed",
+          searchFields: "title",
+          valueField: "title",
+          displayFields: ["title", "dateBirth", "dateDeath"],
+        }
+      - {
+          label: "Kunstenaar",
+          name: "artist",
+          widget: "relation",
+          collection: "col--artists",
+          searchFields: "title",
+          valueField: "title",
+          displayFields: ["title"],
+          required: false,
+        }
+      # - {
+      #     label: "Geportretteerde personen geboorte",
+      #     name: "portrayedPersonsBirth",
+      #     widget: "relation",
+      #     collection: "col--portrayed",
+      #     searchFields: ["title", "dateBirth", "dateDeath"],
+      #     valueField:  "dateBirth",
+      #     displayFields: ["title", "dateBirth"],
+      #   }
+      # - {
+      #     label: "Geportretteerde personen dood",
+      #     name: "portrayedPersonsDeath",
+      #     widget: "relation",
+      #     collection: "col--portrayed",
+      #     searchFields: ["title", "dateBirth", "dateDeath"],
+      #     valueField:  "dateDeath",
+      #     displayFields: ["title", "dateDeath"],
+      #   }
+      - {
+          label: "Afbeelding",
+          name: "featuredImage",
+          widget: image,
+          required: false,
+        }
+      - { label: "Uitgebreide beschrijving", name: "body", widget: "markdown" }
+      # - {label: "Tags", name: "tags", widget: "list"}
+      - label: "Metadata"
+        name: "itemMetadata"
+        widget: "object"
+        fields:
+          - { label: "Objectnummer", name: "objectNumber", widget: "number" }
+          - { label: "IB nummer", name: "objectIbNumber", widget: "number" }
+          - { label: "Afmeting", name: "objectMeasurements", widget: "string" }
+          - {
+              label: "Techniek",
+              name: "usedTechnique",
+              widget: "relation",
+              collection: "col--art-techniques",
+              searchFields: "title",
+              valueField: "title",
+              displayFields: "title",
+              multiple: true,
+            }
+          - {
+              label: "Datering",
+              name: "objectTimeperiod",
+              widget: "relation",
+              collection: "col--time-periods",
+              searchFields: "title",
+              valueField: "title",
+              displayFields: "title",
+            }
+          - { label: "RKD", name: "rkdLink", widget: "text" }
+
+  - name: "col--portrayed"
+    label: "Personen"
+    folder: "src/pages/people/portrayed"
+    create: true
+    slug: "{{slug}}"
+    summary: "{{title}}"
+    fields:
+      - {
+          label: "Template Key",
+          name: "templateKey",
+          widget: "hidden",
+          default: "portrayed-person",
+        }
+      - { label: "Naam", name: "title", widget: "string" }
+      - {
+          label: "Afbeelding",
+          name: "featuredImage",
+          widget: image,
+          required: false,
+        }
+      - { label: "Korte beschrijving", name: "description", widget: "text" }
+      - { label: "Geboorte datum", name: "dateBirth", widget: "string" }
+      - { label: "Sterf datum", name: "dateDeath", widget: "string" }
+
+  - name: "col--artists"
+    label: "Kunstenaars"
+    folder: "src/pages/people/artists"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - {
+          label: "Template Key",
+          name: "templateKey",
+          widget: "hidden",
+          default: "artist-page",
+        }
+      - { label: "Naam", name: "title", widget: "string" }
+      - { label: "Korte beschrijving", name: "description", widget: "text" }
+      - { label: "Geboorte datum", name: "dateBirth", widget: "string" }
+      - { label: "Sterf datum", name: "dateDeath", widget: "string" }
+
+  # Categories
+
+  - name: "col--art-techniques"
+    label: "Technieken"
+    folder: "src/pages/categories/techniques"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - {
+          label: "Template Key",
+          name: "templateKey",
+          widget: "hidden",
+          default: "art-techniques",
+        }
+      - { label: "Soort techniek", name: "title", widget: "string" }
+      - { label: "Korte beschrijving", name: "description", widget: "text" }
+
+  - name: "col--time-periods"
+    label: "Tijdsperiodes"
+    folder: "src/pages/categories/periods"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - {
+          label: "Template Key",
+          name: "templateKey",
+          widget: "hidden",
+          default: "art-time-period",
+        }
+      - { label: "Tijdsperiode", name: "title", widget: "string" }
+      - { label: "Korte beschrijving", name: "description", widget: "text" }
+      - { label: "Start jaartal", name: "dateBirth", widget: "string" }
+      - { label: "Eind jaartal", name: "dateDeath", widget: "string" }
+
+  # Blog
+
+  - name: "blog"
+    label: "Blog"
+    folder: "src/pages/blog"
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    fields:
+      - {
+          label: "Template Key",
+          name: "templateKey",
+          widget: "hidden",
+          default: "blog-post",
+        }
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Publish Date", name: "date", widget: "datetime" }
+      - { label: "Description", name: "description", widget: "text" }
+      - { label: "Featured Post", name: "featuredpost", widget: "boolean" }
+      - { label: "Featured Image", name: "featuredImage", widget: image }
+      - { label: "Body", name: "body", widget: "markdown" }
+      - { label: "Tags", name: "tags", widget: "list" }
+
+  # Pages
+
+  - name: "pages"
+    label: "Pagina's"
+    files:
+      - file: "src/pages/index.md"
+        label: "Homepage"
+        name: "index"
+        fields:
+          - {
+              label: "Template Key",
+              name: "templateKey",
+              widget: "hidden",
+              default: "index-page",
+            }
+          - { label: Pagina titel, name: title, widget: string }
+          - {
+              label: Over ons,
+              name: mainpitch,
+              widget: object,
+              fields:
+                [
+                  { label: Titel, name: title, widget: string },
+                  { label: Beschrijving, name: description, widget: text },
+                ],
+            }
+      - file: "src/pages/over-ons/index.md"
+        label: "Over ons"
+        name: "over-ons"
+        editor:
+          preview: false
+        fields:
+          - {
+              label: "Template Key",
+              name: "templateKey",
+              widget: "hidden",
+              default: "about-page",
+            }
+          - { label: "Titel", name: "title", widget: "string" }
+          - { label: "Algemene informatie", name: "body", widget: "markdown" }
+          - { label: "Financiën PDF", name: "financesPdf", widget: "file" }

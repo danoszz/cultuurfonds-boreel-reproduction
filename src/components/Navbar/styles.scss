@@ -1,0 +1,143 @@
+@import "../../styles/variables.scss";
+
+.navbar {
+  position: absolute;
+  z-index: 100;
+  left: 0;
+  right: 0;
+  top: 0;
+  background-color: $c-white;
+  &.is-transparent {
+    background-color: transparent;
+    .container {
+      justify-content: flex-end;
+      margin-top: $magicNumber / 2;
+      margin-right: $magicNumber / 2;
+    }
+    .navbar-brand {
+      display: none;
+    }
+    .navbar-item {
+      color: $c-white;
+    }
+    &:after {
+      display: none;
+    }
+    .navbar-burger span {
+      background-color: $c-white;
+    }
+  }
+  &:after {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: -50%;
+    height: 50%;
+    background-image: linear-gradient(
+      0deg,
+      rgba(255, 255, 255, 0) 0%,
+      #ffffff 100%
+    );
+  }
+  .navbar-menu {
+    display: inline-flex;
+    transition: all 320ms $transition--smooth;
+
+    @media screen and (max-width: $phablet-breakpoint) {
+      transform: translateX(100vw);
+      background-color: $c-brown;
+      color: $c-white;
+      position: fixed;
+      right: 0;
+      left: 0;
+      top: 0;
+      min-height: 50vh;
+      z-index: 2;
+      padding: $magicNumber / 2;
+      &:after {
+        content: "";
+        width: 100%;
+        height: 100%;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background-color: $c-red;
+        position: absolute;
+        transition: all 320ms $transition--smooth;
+      }
+      &.is-active {
+        transform: translateX(0);
+        align-items: flex-end;
+        .navbar-item {
+          color: $c-white;
+          font-size: calc(30px + 2vw);
+          font-weight: 200;
+          margin-bottom: $magicNumber / 4;
+          transition: all 320ms $transition--smooth;
+        }
+        .navbar-start {
+          display: flex;
+          flex-direction: column;
+        }
+      }
+    }
+  }
+  .navbar-burger {
+    width: $magicNumber;
+    height: $magicNumber;
+    position: fixed;
+    right: $magicNumber / 4;
+    top: $magicNumber / 4;
+    display: none;
+    border-radius: 5px;
+    cursor: pointer;
+    z-index: 5;
+    span {
+      width: 50%;
+      height: 2px;
+      margin-top: 6px;
+      background-color: $c-black;
+      &:nth-child(1) {
+        margin-top: 0;
+      }
+    }
+    &.is-active {
+      span {
+        background-color: $c-white;
+      }
+    }
+    @media screen and (max-width: $phablet-breakpoint) {
+      display: inline-flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+  }
+}
+
+.container {
+  display: flex;
+  height: $magicNumber;
+  padding: $magicNumber / 4;
+  padding-right: $magicNumber / 2;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: $magicNumber / 4;
+  .navbar-item {
+    margin-left: $magicNumber / 2;
+    text-decoration: none;
+    color: initial;
+    font-weight: 400;
+    &.logo {
+      font-weight: 400;
+      font-size: 28px;
+      font-family: "Ibarra Real Nova";
+    }
+  }
+  @media screen and (max-width: $phablet-breakpoint) {
+    .navbar-item {
+      margin-left: 0;
+    }
+  }
+}

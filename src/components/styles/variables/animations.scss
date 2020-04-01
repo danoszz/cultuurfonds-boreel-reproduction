@@ -1,0 +1,19 @@
+// Breakpoints
+// -----------
+$transition--smooth: cubic-bezier(0.455, 0.030, 0.515, 0.955);
+$ratio: 1.65;
+$delay__main: 1860ms;
+$delay__1: 165ms;
+$delay__2: $delay__1 * $ratio;
+$delay__3: $delay__2 * $ratio;
+$delay__4: $delay__3 * $ratio;
+$delay__5: $delay__4 * $ratio;
+$delay--total: ($delay__1 + $delay__2 + $delay__3 + $delay__4 + $delay__5) / 5;
+
+$fadeinBottom: $delay--total $transition--smooth fadeInBottom forwards;
+$ani-fadeinTop: $delay--total $transition--smooth fadeInTop forwards;
+
+//
+// @mixin transition($transition-name) {
+//   animation: $transition-name $delay--total $transition--smooth fadeInTop forwards;
+// }

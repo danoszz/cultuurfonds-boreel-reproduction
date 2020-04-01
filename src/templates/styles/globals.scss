@@ -1,0 +1,29 @@
+// Variables
+
+$magicNumber: 60px;
+$magicNumberFlex: 8vw;
+$c-white: #fff;
+$s-br_small: 5px;
+
+// Globals
+
+html {
+  box-sizing: border-box;
+  border-collapse: collapse;
+  line-height: 1;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: $c-white;
+  // font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+* {
+  border-collapse: inherit;
+}
+
+*,
+:after,
+:before {
+  box-sizing: inherit;
+}
+
+// Typography

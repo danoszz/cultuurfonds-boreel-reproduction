@@ -1,0 +1,75 @@
+@import "../../styles/variables.scss";
+
+footer {
+  display: flex;
+  background-color: $c-red;
+  width: 100%;
+  padding: $magicNumber;
+  color: $c-white;
+
+  .footer-menu--item {
+    color: $c-white;
+    text-decoration: none;
+    &:hover {
+      color: $c-black;
+    }
+    &.logo {
+      font-weight: 400;
+      font-size: 28px;
+      font-family: "Ibarra Real Nova";
+    }
+  }
+  .col--left,
+  .col--right {
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+  }
+  .col--right {
+    section.menu {
+      .menu--list {
+        margin-bottom: 0;
+        margin-left: 0;
+        li:last-child {
+          margin-bottom: 0;
+        }
+      }
+    }
+  }
+  .col--left {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    .copyright {
+      p {
+        font-size: 14px;
+        opacity: 0.5;
+        margin: 0;
+        a {
+          color: inherit;
+          &:hover {
+            color: $c-black;
+            text-decoration-color: $c-black;
+          }
+        }
+      }
+    }
+  }
+  @media screen and (max-width: $phablet-breakpoint) {
+    flex-direction: column-reverse;
+    padding: $magicNumberFlex;
+
+    .col--left,
+    .col--right {
+      width: 100%;
+    }
+    .menu {
+      margin-bottom: $magicNumberFlex;
+    }
+    .menu--list {
+      li:before {
+        display: none;
+      }
+    }
+  }
+}
