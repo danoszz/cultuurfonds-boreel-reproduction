@@ -4,7 +4,6 @@ title: Website Cultuurhistorisch Fonds Boreel online
 date: 2020-02-20T09:13:03.240Z
 description: Website on line
 featuredpost: true
-featuredImage: /img/afb-invnr-04.jpg
 tags:
   - "#boreel"
 ---

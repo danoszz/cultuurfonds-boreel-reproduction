@@ -1,7 +1,6 @@
 ---
 templateKey: portrayed-page
 title: Wendela Eleonora ten Hoven
-featuredImage: /img/afb-invnr-05.jpg
 description: >-
   Wendela ten Hoven trouwt met Willem Munter (1769) en met Jan Carel Godin (zie
   object 9) in 1780

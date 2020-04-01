@@ -15,7 +15,11 @@ class ArtItemPreviewAlgolia extends React.Component {
         <figure className="art-item--preview">
           {post.frontmatter.featuredImage ? (
             <div className="featured-thumbnail">
-              {true ? (
+              <Img
+                fluid={post.frontmatter.featuredImage.childImageSharp.fluid}
+                alt={`Uitgelichte afbeelding voor ${post.frontmatter.title}`}
+              />
+              {/* {true ? (
                 <Img
                   fluid={post.frontmatter.featuredImage.childImageSharp.fluid}
                   alt={`Uitgelichte afbeelding voor ${post.frontmatter.title}`}
@@ -26,7 +30,7 @@ class ArtItemPreviewAlgolia extends React.Component {
                   src={post.frontmatter.featuredImage.publicURL}
                   alt={`Uitgelichte afbeelding voor ${post.frontmatter.title}`}
                 />
-              )}
+              )} */}
             </div>
           ) : (
             <div

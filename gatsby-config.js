@@ -59,17 +59,6 @@ module.exports = {
       "Het Cultuurhistorisch Fonds Boreel is een ANBI Stichting die een kunstverzameling van de familie Boreel beheert."
   },
   plugins: [
-    "gatsby-plugin-react-helmet",
-    {
-      resolve: "gatsby-plugin-sass",
-      options: {
-        useResolveUrlLoader: {
-          options: {
-            sourceMap: true //default is false
-          }
-        }
-      }
-    },
     {
       // keep as first gatsby-source-filesystem plugin for gatsby image support
       resolve: "gatsby-source-filesystem",
@@ -122,6 +111,17 @@ module.exports = {
             }
           }
         ]
+      }
+    },
+    "gatsby-plugin-react-helmet",
+    {
+      resolve: "gatsby-plugin-sass",
+      options: {
+        useResolveUrlLoader: {
+          options: {
+            sourceMap: true //default is false
+          }
+        }
       }
     },
     {

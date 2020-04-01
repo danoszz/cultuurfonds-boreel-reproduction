@@ -216,14 +216,14 @@ export const pageQuery = graphql`
           rkdLink
           usedTechnique
         }
+        featuredImage {
+          childImageSharp {
+            fluid(maxWidth: 900, quality: 100, toFormat: JPG) {
+              ...GatsbyImageSharpFluid
+            }
+          }
+        }
       }
     }
   }
 `
-// featuredImage {
-//   childImageSharp {
-//     fluid(maxWidth: 900, quality: 100, toFormat: JPG) {
-//       ...GatsbyImageSharpFluid
-//     }
-//   }
-// }
