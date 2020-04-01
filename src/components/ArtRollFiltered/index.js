@@ -30,7 +30,7 @@ const Results = connectStateResults(
 )
 
 const FilteredArtRoll = ({ maxHits }) => (
-  <InstantSearch searchClient={searchClient} indexName="Boreel">
+  <InstantSearch searchClient={searchClient} indexName="BoreelTest">
     <Configure hitsPerPage={maxHits || 3} />
     <Results>
       <StaticHits hits={maxHits || 3} />

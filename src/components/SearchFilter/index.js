@@ -35,7 +35,7 @@ const Results = connectStateResults(
 )
 
 const SearchFilter = () => (
-  <InstantSearch searchClient={searchClient} indexName="Boreel">
+  <InstantSearch searchClient={searchClient} indexName="BoreelTest">
     <Configure hitsPerPage={9} />
     <Stats
       translations={{

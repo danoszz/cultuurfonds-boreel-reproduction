@@ -34,7 +34,7 @@ class QuickSearchBoxNew extends Component {
       <div className="search-box small home-page">
         <div className="form-field--wrapper">
           <h4 className="h4__large">Doorzoek de collectie</h4>
-          <InstantSearch indexName="Boreel" searchClient={searchClient}>
+          <InstantSearch indexName="BoreelTest" searchClient={searchClient}>
             <Configure hitsPerPage={5} />
             <Autocomplete
               onSuggestionSelected={this.onSuggestionSelected}

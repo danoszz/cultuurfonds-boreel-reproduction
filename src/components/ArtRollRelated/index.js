@@ -26,7 +26,7 @@ const Results = connectStateResults(({ searchResults, children }) =>
 )
 
 const ArtRollRelated = ({ name }) => (
-  <InstantSearch searchClient={searchClient} indexName="Boreel">
+  <InstantSearch searchClient={searchClient} indexName="BoreelTest">
     <Configure
       filters={`frontmatter.artist:"${name}" OR frontmatter.portrayedPersons:"${name}"`}
     />
